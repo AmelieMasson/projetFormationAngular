@@ -1,0 +1,23 @@
+
+<h1>Liste des formations proposées : </h1>
+<br>
+<table class="table table-bordered">
+    <tr>
+        <td>Nom</td>
+        <td>Prix </td>
+        <td>Date de début</td>
+        <td>Date de fin</td>
+    </tr>
+
+    <tr *ngFor="let a of formations">
+        <td >{{a.nom}}</td>
+        <td >{{a.prix}}</td>
+        <td>{{a.date_debut}}</td>
+        <td>{{a.date_fin}}</td>
+
+        
+
+     
+        
+    </tr>
+    </table>
