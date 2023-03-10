@@ -21,6 +21,12 @@ export class FormationService {
     return this.http.get<Formation>(`http://localhost:8015/api/formations/${id}`)
   }
 
+  getFormationById2(id:number)
+  {
+    return this.http.get<Formation[]>(`http://localhost:8015/api/FormationParParticipant/${id}`)
+  }
+
+
   addFormation(f:Formation)
   {
     return this.http.post("http://localhost:8015/api/formations", f)
@@ -36,5 +42,10 @@ export class FormationService {
   deleteFormation(id:number)
   {
     return this.http.delete(`http://localhost:8015/api/formations/${id}`)
+  }
+
+  afficherFormationParNom(nom:string)
+  {
+    return this.http.get<Formation[]>(`http://localhost:8015/api/formations/${nom}`)
   }
 }
