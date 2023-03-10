@@ -14,16 +14,13 @@ export class ParticipantService {
     return this.http.get<Participant[]>("http://localhost:8015/api/participants")
   }
 
-<<<<<<< HEAD
+
   getParticipantsById(id:number)
   {
     return this.http.get<Participant>(`http://localhost:8015/api/participants/${id}`)
   }
 
-  addParticipant(participant:Participant)
-  {
-    return this.http.post("http://localhost:8015/api/participants", participant)
-  }
+ 
 
 
   modifierParticipant(participant:Participant)
@@ -39,10 +36,27 @@ export class ParticipantService {
 
 
 
-=======
+
   addParticipant(f:Participant)
   {
     return this.http.post("http://localhost:8015/api/participants", f)
   }
->>>>>>> main
+
+
+  modifPersonneParticipant(id:number)
+  {
+    return this.http.post(`http://localhost:8015/api/modifierPersonneParticipants/${id}`, id)
+  }
+
+  getParticipantById(id:number)
+  {
+    return this.http.get<Participant>(`http://localhost:8015/api/participants/${id}`)
+  }
+
+  modifPersonneUtilisateur(id:number)
+  {
+    return this.http.post(`http://localhost:8015/api/modifierPersonneUtilisateurs/${id}`, id)
+  }
+
+
 }

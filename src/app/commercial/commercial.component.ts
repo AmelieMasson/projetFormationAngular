@@ -46,7 +46,7 @@ export class CommercialComponent implements OnInit{
 
   Supprimer(id:number)
   {
-    this.personneService.deletePersonne(id).subscribe(response=>this.AfficherAll());
+    this.personneService.deletePersonne(id).subscribe(response=>{this.AfficherAll(); this.AfficherAllParticipant()});
   }
 
   AfficherAllParticipant()
