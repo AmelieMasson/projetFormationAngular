@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 import { Participant } from '../models/participant';
@@ -13,10 +14,11 @@ import { PersonneService } from '../services/personne.service';
   styleUrls: ['./form-participant.component.css']
 })
 export class FormParticipantComponent implements OnInit{
+  
 
   
 
-  constructor(private route:ActivatedRoute, private participantService:ParticipantService, private personneService:PersonneService){}
+  constructor(private route:ActivatedRoute, private participantService:ParticipantService, private personneService:PersonneService, private router:Router){}
 
 participant!:Participant;
 id!:number;
@@ -26,33 +28,42 @@ personne!:Personne;
 
     this.participant=new Participant();
     this.id=this.route.snapshot.params['id'];
-    this.modifier(this.id);
+   // this.modifier(this.id);
+    this.modifierPersoneParticipant(this.id);
     
 
   }
+
+
+
+  Afficher()
+  {
+    this.router.navigateByUrl("commercial");
+  }
+
+
 
   AjouterParticipant()
   {
     this.participantService.addParticipant(this.participant).subscribe(response=>
       {
      
-      this.participant = new Participant});
+      this.participant = new Participant;
+      this.Afficher()});
   }
 
-
-  modifier(id:number)
+  modifierPersoneParticipant(id:number)
   {
-    this.personneService.getPersonneById(id).subscribe(response=>{
-      this.personne=response;
-      let nom=this.personne.nom;
-      let prenom=this.personne.prenom;
-      let age=this.personne.age;
-      let email=this.personne.email;
-      this.participant.nom=nom;
-      this.participant.prenom=prenom;
-      this.participant.age=age;
-      this.participant.email=email;
-    });
+    this.participantService.modifPersonneUtilisateur(id).subscribe(response=>{
+      this.participantService.modifPersonneParticipant(id).subscribe(response=>
+      {
+          this.participantService.getParticipantById(id).subscribe(response=>this.participant=response);
+
+      })})
   }
 
-}
+
+
+  }
+
+
