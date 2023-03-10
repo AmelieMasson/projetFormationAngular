@@ -14,7 +14,7 @@ export class ParticipantService {
     return this.http.get<Participant[]>("http://localhost:8015/api/participants")
   }
 
-<<<<<<< HEAD
+
   getParticipantsById(id:number)
   {
     return this.http.get<Participant>(`http://localhost:8015/api/participants/${id}`)
@@ -36,13 +36,4 @@ export class ParticipantService {
   {
     return this.http.delete(`http://localhost:8015/api/participants/${id}`)
   }
-
-
-
-=======
-  addParticipant(f:Participant)
-  {
-    return this.http.post("http://localhost:8015/api/participants", f)
-  }
->>>>>>> main
 }

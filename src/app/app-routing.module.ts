@@ -13,7 +13,7 @@ import { FormationComponent } from './formation/formation.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { FormParticipantComponent } from './form-participant/form-participant.component';
 import { Participant } from './models/participant';
-import ParticipantComponent  from './participant/participant.component';
+import {ParticipantComponent}  from './participant/participant.component';
 import { ProspectComponent } from './prospect/prospect.component';
 
 const routes: Routes = [
