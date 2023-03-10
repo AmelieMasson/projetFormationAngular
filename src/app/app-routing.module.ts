@@ -13,7 +13,9 @@ import { FormationComponent } from './formationAdmin/formation.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { FormParticipantComponent } from './form-participant/form-participant.component';
 import { Participant } from './models/participant';
+
 import {ParticipantComponent}  from './participantAdmin/participant.component';
+
 import { ProspectComponent } from './prospect/prospect.component';
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
 
