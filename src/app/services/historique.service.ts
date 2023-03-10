@@ -15,7 +15,7 @@ export class HistoriqueService {
   {
     return this.http.get<Historique[]>("http://localhost:8015/api/historiques")
   }
-  
+  ///////grigeu
 
   getHistoriqueById(id:number)
   {

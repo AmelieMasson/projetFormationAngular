@@ -1,0 +1,27 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">prix</th>
+        <th scope="col">date_debut</th>
+        <th scope="col">date_fin</th>
+     
+       
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let f of formations">
+        <td >{{f.id}}</td>
+        <td >{{f.nom}}</td>
+        <td >{{f.prix}}</td>
+        <td >{{f.date_debut}}</td>
+        <td >{{f.date_fin}}</td>
+       
+      
+       
+
+        
+    </tr>
+</tbody>
+</table>
