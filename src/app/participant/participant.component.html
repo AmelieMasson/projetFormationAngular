@@ -1,0 +1,65 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Paiement</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">Formation</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let p of participants">
+        <td >{{p.id}}</td>
+        <td >{{p.nom}}</td>
+        <td >{{p.prenom}}</td>
+        <td >{{p.age}}</td>
+        <td >{{p.email}}</td>
+        <td >{{p.paiements}}</td>
+        <td><button (click)="supprimeParticipant(p.id)">Supprimer</button></td>
+        <td><button (click)="afficherFormationParticipant(p.id)">Afficher</button></td>
+       
+
+     
+       
+
+        
+    </tr>
+</tbody>
+</table>
+
+
+
+<!--
+<h1>Liste des formations disponibles </h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prix </th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+    </tr>
+</thead>
+
+    <tbody>
+    <tr *ngFor="let a of formations">
+        
+        <td>{{a.nom}}</td>
+        <td>{{a.prix}}</td>
+        <td>{{a.date_debut}}</td>
+        <td>{{a.date_fin}}</td>
+       
+        
+
+     
+        
+    </tr>
+</tbody>
+    </table>
+-->

@@ -1,0 +1,66 @@
+
+
+<br>
+<h1> Liste des rendez-vous </h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Date </th>
+        <th scope="col">Heure</th>
+        
+
+    </tr>
+</thead>
+
+    <tbody>
+    <tr *ngFor="let a of rdvs">
+        
+        <td>{{a.id}}</td>
+        <td>{{a.date}}</td>
+        <td>{{a.heure}}</td>   
+        
+    </tr>
+</tbody>
+    </table>
+</body>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+<h1> Liste des Appels </h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Date </th>
+        <th scope="col">Heure</th>
+        <th scope="col">Statut de l'appel</th>
+        <th scope="col">Commentaires</th>
+        
+
+    </tr>
+</thead>
+
+    <tbody>
+    <tr *ngFor="let a of historiques">
+        
+        <td>{{a.id}}</td>
+        <td>{{a.date}}</td>
+        <td>{{a.heure}}</td> 
+        <td>{{a.statut}}</td> 
+        <td>{{a.commentaire}}</td>   
+        
+    </tr>
+</tbody>
+    </table>
+</body>

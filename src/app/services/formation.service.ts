@@ -22,10 +22,19 @@ export class FormationService {
     return this.http.get<Formation>(`http://localhost:8015/api/formations/${id}`)
   }
 
+
   getFormationByFormateur(id:number)
   {
     return this.http.get<Formation[]>(`http://localhost:8015/api/formationsParFormateurs/${id}`)
   }
+
+
+  getFormationById2(id:number)
+  {
+    return this.http.get<Formation[]>(`http://localhost:8015/api/FormationParParticipant/${id}`)
+  }
+
+
 
   addFormation(f:Formation)
   {
@@ -46,8 +55,15 @@ export class FormationService {
 
 
 
+
   getParticipantParFormation(id:number)
   {
    return this.http.get<Participant[]>(`http://localhost:8015/api/participantParFormation/${id}`)
+  }
+
+  afficherFormationParNom(nom:string)
+  {
+    return this.http.get<Formation[]>(`http://localhost:8015/api/formations/${nom}`)
+
   }
 }
