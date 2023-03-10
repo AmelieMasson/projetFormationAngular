@@ -1,23 +1,33 @@
 
-<h1>Liste des formations proposées : </h1>
-<br>
-<table class="table table-bordered">
-    <tr>
-        <td>Nom</td>
-        <td>Prix </td>
-        <td>Date de début</td>
-        <td>Date de fin</td>
-    </tr>
 
+
+
+<h1>Liste des formations disponibles </h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prix </th>
+        <th scope="col">Date de début</th>
+        <th scope="col">Date de fin</th>
+    </tr>
+</thead>
+
+    <tbody>
     <tr *ngFor="let a of formations">
-        <td >{{a.nom}}</td>
-        <td >{{a.prix}}</td>
+        
+        <td>{{a.nom}}</td>
+        <td>{{a.prix}}</td>
         <td>{{a.date_debut}}</td>
         <td>{{a.date_fin}}</td>
-
+       
         
 
      
         
     </tr>
+</tbody>
     </table>
+</body>

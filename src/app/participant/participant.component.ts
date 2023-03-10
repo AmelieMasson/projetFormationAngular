@@ -12,10 +12,12 @@ export class ParticipantComponent implements OnInit{
     constructor(private fService:FormationService){}
 
     formations!:Formation[];
-
+ 
+  
     ngOnInit():void{
 
       this.AfficherAll();
+      
 
     }
 
