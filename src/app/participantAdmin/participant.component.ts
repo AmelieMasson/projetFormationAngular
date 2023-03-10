@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormationComponent } from '../formation/formation.component';
+import { FormationComponent } from '../formationAdmin/formation.component';
 
 
 import { Participant } from '../models/participant';
@@ -14,7 +14,7 @@ import { FormationService } from '../services/formation.service';
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
-export default class ParticipantComponent implements OnInit {
+export  class ParticipantComponent implements OnInit {
 
 
   constructor(private fService:FormationService,private pservice:ParticipantService, private fservice:FormationService,private router:Router)

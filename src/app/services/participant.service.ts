@@ -37,6 +37,8 @@ export class ParticipantService {
 
 
 
+<<<<<<< HEAD
+=======
   addParticipant(f:Participant)
   {
     return this.http.post("http://localhost:8015/api/participants", f)
@@ -58,5 +60,6 @@ export class ParticipantService {
     return this.http.post(`http://localhost:8015/api/modifierPersonneUtilisateurs/${id}`, id)
   }
 
+>>>>>>> main
 
 }
