@@ -1,0 +1,63 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">prix</th>
+        <th scope="col">date_debut</th>
+        <th scope="col">date_fin</th>
+        <th scope="col">Formateur</th>
+        <th scope="col">Supprimer</th>
+        <th scope="col">modifier</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let f of formations">
+        <td >{{f.id}}</td>
+        <td >{{f.nom}}</td>
+        <td >{{f.prix}}</td>
+        <td >{{f.date_debut}}</td>
+        <td >{{f.date_fin}}</td>
+        <td >{{f.formateur.prenom}} {{f.formateur.nom}}</td>
+        <td><button (click)="supprimeFormation(f.id)">Supprimer</button></td>
+        <td><button (click)="modifierFormation(f.id)">modifier</button></td>
+
+     
+       
+
+        
+    </tr>
+</tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+
+
+<form (ngSubmit)="ajouterFormation()">
+
+    Nom:<input type="text" name="nom" [(ngModel)]="fForm.nom">
+    <br>
+    <br>
+    prix:<input type="text" name="prix" [(ngModel)]="fForm.prix">
+    <br>
+    <br>
+    date_debut:<input type="text" name="date_debut" [(ngModel)]="fForm.date_debut">
+    <br>
+    <br>
+    date_fin:<input type="text" name="date_fin" [(ngModel)]="fForm.date_fin">
+    <br>
+    <br>
+   
+
+    <select name="idFormateur" [(ngModel)]="idFormateur">
+        <option *ngFor="let form of formateurs" value="{{form.id}}">{{form.nom}}</option>
+
+    </select>
+
+    
+    
+    <button type="submit">Ajouter</button>
+    </form>
+    

@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+<<<<<<< HEAD
+import ParticipantComponent from './participant.component';
+=======
 import { ParticipantComponent } from './participant.component';
+>>>>>>> main
 
 describe('ParticipantComponent', () => {
   let component: ParticipantComponent;

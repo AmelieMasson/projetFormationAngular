@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Formateur } from '../models/formateur';
+import { Formation } from '../models/formation';
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +22,15 @@ export class FormateurService  {
     return this.http.get<Formateur>(`http://localhost:8015/api/formateurs/${id}`)
   }
 
-  addFormateur(f:Formateur)
+  addFormateur(formateur:Formateur)
   {
-    return this.http.post("http://localhost:8015/api/formateurs", f)
+    return this.http.post("http://localhost:8015/api/formateurs", formateur)
   }
 
 
-  modifierFormateur(f:Formateur)
+  modifierFormateur(formateur:Formateur)
   {
-    return this.http.put("http://localhost:8015/api/formateurs", f)
+    return this.http.put("http://localhost:8015/api/formateurs", formateur)
   }
 
 
@@ -38,7 +39,14 @@ export class FormateurService  {
     return this.http.delete(`http://localhost:8015/api/formateurs/${id}`)
   }
 
+  selectById(id:number)
+  {
+    return this.http.get<Formateur>(`http://localhost:8015/api/formateurs/${id}`)
+  }
 
+  getFormationById(id:number){
 
+    return this.http.get<Formation[]>(`http://localhost:8015/api/formationsParFormateurs/${id}`)
 
+}
 }
