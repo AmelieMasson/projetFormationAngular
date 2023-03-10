@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormationComponent } from '../formation/formation.component';
+import { FormationComponent } from '../formationAdmin/formation.component';
 
 
 import { Participant } from '../models/participant';

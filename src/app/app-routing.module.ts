@@ -6,15 +6,18 @@ import { AfficherCommerciauxComponent } from './afficher-commerciaux/afficher-co
 import { AfficherFormationAccueilComponent } from './afficher-formation-accueil/afficher-formation-accueil.component';
 import { AfficherFormationComponent } from './afficher-formation/afficher-formation.component';
 import { AfficherParticipantComponent } from './afficher-participant/afficher-participant.component';
-import { FormateurComponent } from './formateur/formateur.component';
+import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
-import { FormationComponent } from './formation/formation.component';
+import { FormationComponent } from './formationAdmin/formation.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { FormParticipantComponent } from './form-participant/form-participant.component';
 import { Participant } from './models/participant';
-import {ParticipantComponent}  from './participant/participant.component';
+
+import {ParticipantComponent}  from './participantAdmin/participant.component';
+
 import { ProspectComponent } from './prospect/prospect.component';
+import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
 
 const routes: Routes = [
   {path:'afficherFormation/:id', component:AfficherFormationComponent},
@@ -30,7 +33,9 @@ const routes: Routes = [
   {path:'participant', component:ParticipantComponent},
   {path:'commercial', component:CommercialComponent},
   {path:'prospect/:id', component:ProspectComponent},
-  {path:'form/:id', component:FormParticipantComponent}
+  {path:'form/:id', component:FormParticipantComponent},
+  {path:"afficherCommercialAdmin",component:CommercialAdminComponent},
+ 
 ];
 
 @NgModule({
