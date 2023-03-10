@@ -1,0 +1,133 @@
+
+
+<h1> Liste des Prospects </h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom </th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Liste des RDV et appels</th>
+        <th scope="col">Valider un participant</th>
+        <th scope="col">Action</th>
+
+    </tr>
+</thead>
+
+    <tbody>
+    <tr *ngFor="let a of personnes">
+        
+        <td>{{a.id}}</td>
+        <td>{{a.nom}}</td>
+        <td>{{a.prenom}}</td>
+        <td>{{a.age}}</td>
+        <td>{{a.email}}</td>
+        <td> <button (click)="Afficher(a.id)" class="btn btn-primary">Afficher</button></td>
+        <td> <button (click)="Afficher2(a.id)" class="btn btn-success">Valider</button></td>
+        <td> <button (click)="Supprimer(a.id)" class="btn btn-danger">Supprimer</button></td>
+       
+        
+
+     
+        
+    </tr>
+</tbody>
+    </table>
+</body>
+
+<br><br>
+<h1>Ajouter un prospect</h1>
+<body>
+<form (ngSubmit)="AjouterPersonne()" class="my-5 p-3 border rounded">
+
+    <div class="form-group">
+      <label for="nom">Nom :</label>
+      <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="personne.nom">
+    </div>
+
+    <div class="form-group">
+        <label for="prenom">Prenom :</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="personne.prenom">
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age :</label>
+        <input type="text" class="form-control" id="age" name="age" [(ngModel)]="personne.age">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="personne.email">
+      </div>
+
+      <button type="submit"> Valider</button>
+
+
+</form>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+<h1> Liste des Participants</h1>
+<body>
+<br>
+<table  class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom </th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Username</th>
+        
+
+    </tr>
+</thead>
+
+    <tbody>
+    <tr *ngFor="let a of participants">
+        
+        <td>{{a.id}}</td>
+        <td>{{a.nom}}</td>
+        <td>{{a.prenom}}</td>
+        <td>{{a.age}}</td>
+        <td>{{a.email}}</td>
+        <td>{{a.username}}</td>
+        
+      
+       
+        
+
+     
+        
+    </tr>
+</tbody>
+    </table>
+</body>

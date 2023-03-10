@@ -1,0 +1,34 @@
+<h1>Valider un prospect en participant</h1>
+<body>
+<form (ngSubmit)="AjouterParticipant()" class="my-5 p-3 border rounded">
+
+
+    <div class="form-group">
+      <label for="nom">Nom :</label>
+      <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="participant.nom">
+    </div>
+
+    <div class="form-group">
+        <label for="prenom">Prenom :</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="participant.prenom">
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age :</label>
+        <input type="text" class="form-control" id="age" name="age" [(ngModel)]="participant.age">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email :</label>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="participant.email">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username :</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="participant.username">
+      </div>
+
+      <button type="submit"> Valider</button>
+
+
+</form>

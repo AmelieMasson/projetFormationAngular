@@ -15,6 +15,7 @@ export class FormateurService  {
   {
     return this.http.get<Formateur[]>("http://localhost:8015/api/formateurs")
   }
+  
 
   getFormateurById(id:number)
   {
