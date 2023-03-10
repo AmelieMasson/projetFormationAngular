@@ -1,0 +1,20 @@
+<body>
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>email</th>
+            </tr>
+        </thead>
+            <tbody>
+            <tr *ngFor="let comm of commerciaux">
+                <td>{{comm.id}}</td>
+                <td>{{comm.nom}}</td>
+                <td>{{comm.prenom}}</td>
+                <td>{{comm.email}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </body>
