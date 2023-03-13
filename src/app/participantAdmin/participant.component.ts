@@ -14,7 +14,9 @@ import { FormationService } from '../services/formation.service';
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
+
 export  class ParticipantComponent implements OnInit {
+
 
 
   constructor(private fService:FormationService,private pservice:ParticipantService, private fservice:FormationService,private router:Router)

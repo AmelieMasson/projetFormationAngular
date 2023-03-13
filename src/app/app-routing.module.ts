@@ -15,27 +15,35 @@ import { FormParticipantComponent } from './form-participant/form-participant.co
 import { Participant } from './models/participant';
 
 import {ParticipantComponent}  from './participantAdmin/participant.component';
-
 import { ProspectComponent } from './prospect/prospect.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuardGuard } from './auth-guard.guard';
+import { FormateurGuard } from './formateur.guard';
+import { CommercialGuardGuard } from './commercial-guard.guard';
+import { ParticipantGuard } from './participant.guard';
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
 
+
 const routes: Routes = [
-  {path:'afficherFormation/:id', component:AfficherFormationComponent},
-  {path: 'afficherParticipants/:idFormation', component:AfficherParticipantComponent},
+  {path:'afficherFormation/:id', component:AfficherFormationComponent,canActivate:[FormateurGuard]},
+  {path: 'afficherParticipants/:idFormation', component:AfficherParticipantComponent,canActivate:[FormateurGuard]},
   {path: 'accueil', component:AccueilComponent},
   {path: 'formations', component:AfficherFormationAccueilComponent},
   {path: 'commerciaux', component:AfficherCommerciauxComponent},
-  {path:"afficherFormationParFormateur/:id",component:FormationParFormateurComponent},
-  {path:"afficherFormationParParticipant/:id",component:FormationParParticipantsComponent},
-  {path:"afficherFormateur",component:FormateurComponent},
-  {path:"afficherFormation",component:FormationComponent},
-  {path:"afficherParticipants",component:ParticipantComponent},
-  {path:'participant', component:ParticipantComponent},
-  {path:'commercial', component:CommercialComponent},
-  {path:'prospect/:id', component:ProspectComponent},
-  {path:'form/:id', component:FormParticipantComponent},
+
+  {path:"afficherFormationParFormateur/:id",component:FormationParFormateurComponent,canActivate:[AuthGuardGuard]},
+  {path:"afficherFormationParParticipant/:id",component:FormationParParticipantsComponent,canActivate:[AuthGuardGuard]},
+  {path:"afficherFormateur",component:FormateurComponent,canActivate:[AuthGuardGuard]},
+  {path:"afficherFormation",component:FormationComponent,canActivate:[AuthGuardGuard]},
+  {path:"afficherParticipants",component:ParticipantComponent,canActivate:[ParticipantGuard]},
+  {path:'participant', component:ParticipantComponent,canActivate:[ParticipantGuard]},
+  {path:'commercial', component:CommercialComponent,canActivate:[CommercialGuardGuard]},
+  {path:'prospect/:id', component:ProspectComponent,canActivate:[CommercialGuardGuard]},
+  {path:'form/:id', component:FormParticipantComponent,canActivate:[CommercialGuardGuard]},
+  {path:'auth', component:AuthComponent},
   {path:"afficherCommercialAdmin",component:CommercialAdminComponent},
  
+
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,8 +20,14 @@ import { FormationComponent } from './formationAdmin/formation.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
 import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
+
+import { AuthentificationInterceptor} from './authentification-interceptor.interceptor';
+import { AuthComponent } from './auth/auth.component';
+
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
+
 import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -40,7 +46,9 @@ import { FormsModule } from '@angular/forms';
     CommercialComponent,
     ProspectComponent,
     FormParticipantComponent,
+    AuthComponent,
     CommercialAdminComponent
+
 
   ],
   imports: [
@@ -49,7 +57,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthentificationInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
