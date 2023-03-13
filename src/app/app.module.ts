@@ -21,6 +21,7 @@ import { FormationParParticipantsComponent } from './formation-par-participants/
 import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
