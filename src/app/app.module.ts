@@ -1,6 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,17 +11,21 @@ import { AfficherParticipantComponent } from './afficher-participant/afficher-pa
 import { AccueilComponent } from './accueil/accueil.component';
 import { AfficherFormationAccueilComponent } from './afficher-formation-accueil/afficher-formation-accueil.component';
 import { AfficherCommerciauxComponent } from './afficher-commerciaux/afficher-commerciaux.component';
-import { ParticipantComponent } from './participant/participant.component';
+import { ParticipantComponent } from './participantAdmin/participant.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { ProspectComponent } from './prospect/prospect.component';
 
 import { FormParticipantComponent } from './form-participant/form-participant.component';
-import { FormationComponent } from './formation/formation.component';
+import { FormationComponent } from './formationAdmin/formation.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
-import { FormateurComponent } from './formateur/formateur.component';
+import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
+<<<<<<< HEAD
 import { AuthentificationInterceptor} from './authentification-interceptor.interceptor';
 import { AuthComponent } from './auth/auth.component';
+=======
+import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
+>>>>>>> main
 
 
 @NgModule({
@@ -40,7 +44,11 @@ import { AuthComponent } from './auth/auth.component';
     CommercialComponent,
     ProspectComponent,
     FormParticipantComponent,
+<<<<<<< HEAD
     AuthComponent
+=======
+    CommercialAdminComponent
+>>>>>>> main
 
   ],
   imports: [

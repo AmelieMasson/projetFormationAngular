@@ -34,9 +34,6 @@ export class ParticipantService {
     return this.http.delete(`http://localhost:8015/api/participants/${id}`)
   }
 
-
-
-
   addParticipant(f:Participant)
   {
     return this.http.post("http://localhost:8015/api/participants", f)
