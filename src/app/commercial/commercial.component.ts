@@ -62,6 +62,12 @@ export class CommercialComponent implements OnInit{
       this.AfficherAllParticipant();
       this.personne= new Personne});
   }
+
+  deconnect()
+{
+  sessionStorage.removeItem('token')
+  this.router.navigateByUrl('auth')
+}
   
 
 }
