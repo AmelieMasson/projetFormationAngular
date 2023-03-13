@@ -20,12 +20,13 @@ import { FormationComponent } from './formationAdmin/formation.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
 import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
-<<<<<<< HEAD
+
 import { AuthentificationInterceptor} from './authentification-interceptor.interceptor';
 import { AuthComponent } from './auth/auth.component';
-=======
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
->>>>>>> main
+import { FormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -44,11 +45,11 @@ import { CommercialAdminComponent } from './commercial-admin/commercial-admin.co
     CommercialComponent,
     ProspectComponent,
     FormParticipantComponent,
-<<<<<<< HEAD
-    AuthComponent
-=======
+
+    AuthComponent,
+
     CommercialAdminComponent
->>>>>>> main
+
 
   ],
   imports: [
