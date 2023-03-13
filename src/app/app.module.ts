@@ -1,6 +1,6 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,12 @@ import { FormationComponent } from './formationAdmin/formation.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
 import { FormateurComponent } from './formateurAdmin/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
+<<<<<<< HEAD
+import { AuthentificationInterceptor} from './authentification-interceptor.interceptor';
+import { AuthComponent } from './auth/auth.component';
+=======
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
+>>>>>>> main
 
 
 @NgModule({
@@ -39,7 +44,11 @@ import { CommercialAdminComponent } from './commercial-admin/commercial-admin.co
     CommercialComponent,
     ProspectComponent,
     FormParticipantComponent,
+<<<<<<< HEAD
+    AuthComponent
+=======
     CommercialAdminComponent
+>>>>>>> main
 
   ],
   imports: [
@@ -48,7 +57,8 @@ import { CommercialAdminComponent } from './commercial-admin/commercial-admin.co
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthentificationInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
