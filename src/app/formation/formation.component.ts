@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Formateur } from '../models/formateur';
 import { Formation } from '../models/formation';
 import { FormateurService } from '../services/formateur.service';
@@ -11,7 +12,7 @@ import { FormationService } from '../services/formation.service';
 })
 export class FormationComponent implements OnInit {
 
-  constructor(private fservice:FormationService,private formateurservice:FormateurService)
+  constructor(private fservice:FormationService,private formateurservice:FormateurService, private router:Router)
   {
 
   }
@@ -85,6 +86,12 @@ ajouterFormation()
 
     this.afficherFormateur()
   }
+
+  deconnect()
+{
+  sessionStorage.removeItem('token')
+  this.router.navigateByUrl('auth')
+}
 
 
 }

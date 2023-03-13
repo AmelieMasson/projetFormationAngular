@@ -71,4 +71,11 @@ export class AfficherFormationComponent implements OnInit {
     this.router.navigateByUrl(`afficherParticipants/${idFormation}`)
   }
 
+
+  deconnect()
+{
+  sessionStorage.removeItem('token')
+  this.router.navigateByUrl('auth')
+}
+
 }

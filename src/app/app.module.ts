@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,12 +14,14 @@ import { AfficherCommerciauxComponent } from './afficher-commerciaux/afficher-co
 import { ParticipantComponent } from './participant/participant.component';
 import { CommercialComponent } from './commercial/commercial.component';
 import { ProspectComponent } from './prospect/prospect.component';
-import { FormsModule } from '@angular/forms';
+
 import { FormParticipantComponent } from './form-participant/form-participant.component';
 import { FormationComponent } from './formation/formation.component';
 import { FormationParParticipantsComponent } from './formation-par-participants/formation-par-participants.component';
 import { FormateurComponent } from './formateur/formateur.component';
 import { FormationParFormateurComponent } from './formation-par-formateur/formation-par-formateur.component';
+import { AuthentificationInterceptor} from './authentification-interceptor.interceptor';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -37,7 +39,8 @@ import { FormationParFormateurComponent } from './formation-par-formateur/format
     FormationParFormateurComponent,
     CommercialComponent,
     ProspectComponent,
-    FormParticipantComponent
+    FormParticipantComponent,
+    AuthComponent
 
   ],
   imports: [
@@ -46,7 +49,8 @@ import { FormationParFormateurComponent } from './formation-par-formateur/format
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthentificationInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

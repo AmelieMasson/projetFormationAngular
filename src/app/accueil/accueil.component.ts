@@ -24,4 +24,10 @@ export class AccueilComponent implements OnInit{
     this.router.navigateByUrl('commerciaux')
   }
 
+
+  auth()
+  {
+    this.router.navigateByUrl('auth')
+  }
+
 }
