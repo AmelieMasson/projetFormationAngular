@@ -44,6 +44,12 @@ export class CommercialComponent implements OnInit{
     this.router.navigateByUrl(`form/${id}`);
   }
 
+  Afficher3(id:number)
+  {
+    this.router.navigateByUrl(`gestionParticipant/${id}`);
+  }
+
+
   Supprimer(id:number)
   {
     this.personneService.deletePersonne(id).subscribe(response=>{this.AfficherAll(); this.AfficherAllParticipant()});
@@ -63,10 +69,15 @@ export class CommercialComponent implements OnInit{
       this.personne= new Personne});
   }
 
+  SupprimerParticipant(id:number)
+  {
+    this.participantService.deleteParticipant(id).subscribe(response=>{this.AfficherAll(); this.AfficherAllParticipant()});
+  }
+
   deconnect()
 {
   sessionStorage.removeItem('token')
-  this.router.navigateByUrl('auth')
+  this.router.navigateByUrl('accueil')
 }
   
 

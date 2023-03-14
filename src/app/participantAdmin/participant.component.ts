@@ -63,6 +63,13 @@ formations!:Formation[]
   this.router.navigateByUrl(`afficherFormationParParticipant/${id}`);
 }
  
+
+
+deconnect()
+  {
+    sessionStorage.removeItem('token')
+    this.router.navigateByUrl('accueil')
+  }
   
   
     

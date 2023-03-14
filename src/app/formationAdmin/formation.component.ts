@@ -90,7 +90,7 @@ ajouterFormation()
   deconnect()
 {
   sessionStorage.removeItem('token')
-  this.router.navigateByUrl('auth')
+  this.router.navigateByUrl('accueil')
 }
 
 

@@ -75,7 +75,7 @@ export class AfficherFormationComponent implements OnInit {
   deconnect()
 {
   sessionStorage.removeItem('token')
-  this.router.navigateByUrl('auth')
+  this.router.navigateByUrl('accueil')
 }
 
 }

@@ -1,7 +1,9 @@
 
-
+<body><br>
+<br>
+<button (click)="deconnect()" class="btn btn-primary">Deconnexion</button><br><br>
 <h1> Liste des Prospects </h1>
-<body>
+
 <br>
 <table  class="table table-striped">
     <thead>
@@ -106,6 +108,8 @@
         <th scope="col">Age</th>
         <th scope="col">Email</th>
         <th scope="col">Username</th>
+        <th scope="col">Action</th>
+        <th scope="col">Action 2</th>
         
 
     </tr>
@@ -120,6 +124,8 @@
         <td>{{a.age}}</td>
         <td>{{a.email}}</td>
         <td>{{a.username}}</td>
+        <td><button (click)="SupprimerParticipant(a.id)" class="btn btn-danger">Supprimer </button></td>
+        <td><button (click)="Afficher3(a.id)" class="btn btn-primary">Afficher liste formation </button></td>
         
       
        
@@ -132,7 +138,3 @@
     </table>
 </body>
 
-<br>
-<br>
-
-<button (click)="deconnect()" class="btn btn-primary">Deconnexion</button>
