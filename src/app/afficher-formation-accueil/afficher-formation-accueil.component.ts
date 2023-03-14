@@ -8,11 +8,13 @@ import { FormationService } from '../services/formation.service';
   styleUrls: ['./afficher-formation-accueil.component.css']
 })
 export class AfficherFormationAccueilComponent implements OnInit{
+ 
+
+  formations!:Formation[];
+
   ngOnInit(): void {
     this.afficherFormationsAccueil();
   }
-
-  formations!:Formation[];
 
   constructor(private formationService:FormationService){}
 

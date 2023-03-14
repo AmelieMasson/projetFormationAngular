@@ -23,23 +23,31 @@ import { CommercialGuardGuard } from './commercial-guard.guard';
 import { ParticipantGuard } from './participant.guard';
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
 
+import { PageParticipantComponent } from './page-participant/page-participant.component';
+import { GestionParticipantComponent } from './gestion-participant/gestion-participant.component';
+
 
 const routes: Routes = [
-  {path:'afficherFormation/:id', component:AfficherFormationComponent,canActivate:[FormateurGuard]},
-  {path: 'afficherParticipants/:idFormation', component:AfficherParticipantComponent,canActivate:[FormateurGuard]},
   {path: 'accueil', component:AccueilComponent},
   {path: 'formations', component:AfficherFormationAccueilComponent},
   {path: 'commerciaux', component:AfficherCommerciauxComponent},
 
+  {path:'afficherFormation/:id', component:AfficherFormationComponent,canActivate:[FormateurGuard]},
+  {path: 'afficherParticipants/:idFormation', component:AfficherParticipantComponent,canActivate:[FormateurGuard]},
+
   {path:"afficherFormationParFormateur/:id",component:FormationParFormateurComponent,canActivate:[AuthGuardGuard]},
   {path:"afficherFormationParParticipant/:id",component:FormationParParticipantsComponent,canActivate:[AuthGuardGuard]},
+  {path:"afficherFormationParParticipantConnecté/:id",component:PageParticipantComponent,canActivate:[ParticipantGuard]},  
   {path:"afficherFormateur",component:FormateurComponent,canActivate:[AuthGuardGuard]},
   {path:"afficherFormation",component:FormationComponent,canActivate:[AuthGuardGuard]},
-  {path:"afficherParticipants",component:ParticipantComponent,canActivate:[ParticipantGuard]},
-  {path:'participant', component:ParticipantComponent,canActivate:[ParticipantGuard]},
+  {path:"afficherParticipants",component:ParticipantComponent,canActivate:[AuthGuardGuard]},
+  {path:'participant', component:ParticipantComponent,canActivate:[AuthGuardGuard]},
   {path:'commercial', component:CommercialComponent,canActivate:[CommercialGuardGuard]},
   {path:'prospect/:id', component:ProspectComponent,canActivate:[CommercialGuardGuard]},
   {path:'form/:id', component:FormParticipantComponent,canActivate:[CommercialGuardGuard]},
+
+  {path:'gestionParticipant/:id', component:GestionParticipantComponent,canActivate:[CommercialGuardGuard]},
+
   {path:'auth', component:AuthComponent},
   {path:"afficherCommercialAdmin",component:CommercialAdminComponent},
  

@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit{
   utilisateur!:Utilisateur;
   nomRole!:string;
   idFormateur!:number;
-  
+ 
 
 
   ngOnInit(): void {
@@ -49,10 +49,11 @@ export class AuthComponent implements OnInit{
           this.nomRole=this.utilisateur.role.nom_role;
           sessionStorage.setItem('nomRole',this.nomRole)
           this.idFormateur=this.utilisateur.id;
+    
 
           switch(this.nomRole)
           {
-            case "participant":  this.router.navigateByUrl('participant');
+            case "participant":  this.router.navigateByUrl(`afficherFormationParParticipantConnecté/${this.idFormateur}`);
             break;
             case "formateur":  
   

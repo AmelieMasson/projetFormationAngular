@@ -15,7 +15,10 @@ import { FormationService } from '../services/formation.service';
   styleUrls: ['./participant.component.css']
 })
 
-export  class ParticipantComponent implements OnInit {
+
+export class ParticipantComponent implements OnInit {
+
+
 
 
 
@@ -62,6 +65,13 @@ formations!:Formation[]
   this.router.navigateByUrl(`afficherFormationParParticipant/${id}`);
 }
  
+
+
+deconnect()
+  {
+    sessionStorage.removeItem('token')
+    this.router.navigateByUrl('accueil')
+  }
   
   
     
