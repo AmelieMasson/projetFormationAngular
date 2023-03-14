@@ -40,5 +40,10 @@ afficherFormationFormateur(id:number)
     
   }
 
+  deconnect()
+  {
+    sessionStorage.removeItem('token')
+    this.router.navigateByUrl('accueil')
+  }
 
 }

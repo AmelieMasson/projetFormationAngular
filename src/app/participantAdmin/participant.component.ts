@@ -14,11 +14,10 @@ import { FormationService } from '../services/formation.service';
   templateUrl: './participant.component.html',
   styleUrls: ['./participant.component.css']
 })
-<<<<<<< HEAD:src/app/participant/participant.component.ts
+
 export class ParticipantComponent implements OnInit {
-=======
-export  class ParticipantComponent implements OnInit {
->>>>>>> main:src/app/participantAdmin/participant.component.ts
+
+
 
 
   constructor(private fService:FormationService,private pservice:ParticipantService, private fservice:FormationService,private router:Router)
@@ -64,6 +63,13 @@ formations!:Formation[]
   this.router.navigateByUrl(`afficherFormationParParticipant/${id}`);
 }
  
+
+
+deconnect()
+  {
+    sessionStorage.removeItem('token')
+    this.router.navigateByUrl('accueil')
+  }
   
   
     
