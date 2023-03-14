@@ -1,3 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="afficherFormation">Formation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="afficherParticipants">Participants <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="afficherFormateur">Formateur</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="afficherCommercialAdmin">Commerciaux <span class="sr-only">(current)</span></a>
+        </li>
+        <li  class="nav-item active">
+            <button (click)="deconnect()" class="btn btn-primary">Deconnexion</button>
+        </li>
+      </ul>
+     
+    </div>
+  </nav>
+<br>
+    <br>
+    
+    <br><br>
+
+
+    <body>
 <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -18,7 +50,7 @@
         <td >{{f.prix}}</td>
         <td >{{f.date_debut}}</td>
         <td >{{f.date_fin}}</td>
-        <td >{{f.formateur.prenom}} {{f.formateur.nom}}</td>
+        <td > {{f.formateur.nom}}</td>
         <td><button (click)="supprimeFormation(f.id)">Supprimer</button></td>
         <td><button (click)="modifierFormation(f.id)">modifier</button></td>
 
@@ -35,7 +67,7 @@
 <br>
 
 
-<form (ngSubmit)="ajouterFormation()">
+<!--<form (ngSubmit)="ajouterFormation()">
 
     Nom:<input type="text" name="nom" [(ngModel)]="fForm.nom">
     <br>
@@ -59,11 +91,43 @@
     
     
     <button type="submit">Ajouter</button>
+    </form>-->
+
+    <h1>Ajouter une formation </h1>
+
+    <form (ngSubmit)="ajouterFormation()" class="my-5 p-3 border rounded">
+
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="fForm.nom">
+        </div>
+    
+        <div class="form-group">
+            <label for="prix">Prix :</label>
+            <input type="text" class="form-control" id="prix" name="prix" [(ngModel)]="fForm.prix">
+        </div>
+    
+        <div class="form-group">
+            <label for="date_debut"> Date de début de formation:</label>
+            <input type="text" class="form-control" id="date_debut" name="date_debut" [(ngModel)]="fForm.date_debut">
+          </div>
+    
+          <div class="form-group">
+            <label for="date_fin">Date de fin de formation :</label>
+            <input type="text" class="form-control" id="date_fin" name="date_fin" [(ngModel)]="fForm.date_fin">
+          </div>
+
+          <div class="form-group">
+            <label for="idFormateur">Formateur :</label>
+            <select name="idFormateur" [(ngModel)]="idFormateur">
+                <option *ngFor="let form of formateurs" value="{{form.id}}">{{form.nom}}</option>
+            </select>
+          </div>
+    
+          <button type="submit"> Valider</button>
+    
+    
     </form>
 
-
-
-    <br>
-    <br>
-    <button (click)="deconnect()" class="btn btn-primary">Deconnexion</button>
-    
+   
+ </body>   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Commercial } from '../models/commercial';
 import { CommercialService } from '../services/commercial.service';
 
@@ -9,7 +10,7 @@ import { CommercialService } from '../services/commercial.service';
 })
 export class CommercialAdminComponent implements OnInit {
 
-constructor(private cservice:CommercialService)
+constructor(private cservice:CommercialService, private router:Router)
 {
 
 }
@@ -30,6 +31,13 @@ commercials!:Commercial[]
 
       response=>this.commercials=response
     )
+  }
+
+
+  deconnect()
+  {
+    sessionStorage.removeItem('token')
+    this.router.navigateByUrl('accueil')
   }
 
 }

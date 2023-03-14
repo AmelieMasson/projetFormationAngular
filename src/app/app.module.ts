@@ -26,6 +26,12 @@ import { AuthComponent } from './auth/auth.component';
 
 import { CommercialAdminComponent } from './commercial-admin/commercial-admin.component';
 import { FormsModule } from '@angular/forms';
+import { PageParticipantComponent } from './page-participant/page-participant.component';
+
+
+import { GestionParticipantComponent } from './gestion-participant/gestion-participant.component';
+
+
 
 
 
@@ -45,9 +51,18 @@ import { FormsModule } from '@angular/forms';
     CommercialComponent,
     ProspectComponent,
     FormParticipantComponent,
+
     AuthComponent,
 
     CommercialAdminComponent
+
+
+    ,
+
+    CommercialAdminComponent,
+      PageParticipantComponent,
+      GestionParticipantComponent
+
 
 
   ],
